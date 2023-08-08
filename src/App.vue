@@ -4,22 +4,24 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
+  
+  <header class="animate-fade-in">
+    
     <img alt="university logo" class="logo" src="/src/assets/university.png" width="170" height="150" />
-
     <div class="wrapper">
       <h1 class="text-4xl text-purple-500">Welcome to</h1>
 <h1 class="text-3xl">Student Information Management System</h1>
-
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
       </nav>
+    
     </div>
+    <div class="border-l h-screen border-gray-400 opacity-30"></div>
   </header>
 
-  <RouterView />
+<transition name="slide" mode="out-in" enter-active-class="animate-slide-in" leave-active-class="animate-slide-out">  
+    <RouterView />
+  </transition>
 </template>
 
 <style scoped>
