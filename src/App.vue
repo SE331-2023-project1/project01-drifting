@@ -5,10 +5,12 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="university logo" class="logo" src="/src/assets/university.png" width="170" height="150" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <h1 class="text-4xl text-purple-500">Welcome to</h1>
+<h1 class="text-3xl">Student Information Management System</h1>
+
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
