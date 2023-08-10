@@ -12,11 +12,12 @@ import HelloWorld from './components/HelloWorld.vue'
       <h1 class="text-4xl text-purple-500">Welcome to</h1>
 <h1 class="text-3xl">Student Information Management System</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Home</RouterLink> 
+        <RouterLink to="/about">about</RouterLink>
       </nav>
     
     </div>
-    <div class="border-l h-screen border-gray-400 opacity-30"></div>
+    <div class="border-l h-screen border-gray-400 opacity-75"></div>
   </header>
 
 <transition name="slide" mode="out-in" enter-active-class="animate-slide-in" leave-active-class="animate-slide-out">  
