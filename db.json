@@ -4,7 +4,7 @@
         "name": "Alice",
         "surname": "Robinson",
         "studentId": 1,
-        "profileImage": "https://shorturl.at/xyzA1",
+        "profileImage": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Chemistry",
           "Economics",
@@ -17,7 +17,7 @@
         "name": "James",
         "surname": "Clark",
         "studentId": 2,
-        "profileImage": "https://shorturl.at/uvwXY",
+        "profileImage": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Sociology",
           "Philosophy",
@@ -30,7 +30,7 @@
         "name": "Emma",
         "surname": "Lewis",
         "studentId": 3,
-        "profileImage": "https://shorturl.at/klmNO",
+        "profileImage": "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Astronomy",
           "Geology",
@@ -43,7 +43,7 @@
         "name": "David",
         "surname": "Lee",
         "studentId": 4,
-        "profileImage": "https://shorturl.at/fghIJ",
+        "profileImage": "https://images.pexels.com/photos/1080213/pexels-photo-1080213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Political Science",
           "Nutrition",
@@ -56,7 +56,7 @@
         "name": "Isabella",
         "surname": "Walker",
         "studentId": 5,
-        "profileImage": "https://shorturl.at/jkqPQ",
+        "profileImage": "https://images.pexels.com/photos/678783/pexels-photo-678783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Mathematics",
           "Physics",
@@ -69,7 +69,7 @@
         "name": "Joshua",
         "surname": "Harris",
         "studentId": 6,
-        "profileImage": "https://shorturl.at/ghrST",
+        "profileImage": "https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Music",
           "Theater",
@@ -82,7 +82,7 @@
         "name": "Mia",
         "surname": "Nelson",
         "studentId": 7,
-        "profileImage": "https://shorturl.at/loxBY",
+        "profileImage": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Geography",
           "Marine Biology",
@@ -95,7 +95,7 @@
         "name": "Jacob",
         "surname": "Hall",
         "studentId": 8,
-        "profileImage": "https://shorturl.at/ghrUV",
+        "profileImage": "https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Law",
           "Criminology",
@@ -108,7 +108,7 @@
         "name": "Sophie",
         "surname": "Adams",
         "studentId": 9,
-        "profileImage": "https://shorturl.at/ghrWX",
+        "profileImage": "https://images.pexels.com/photos/1484810/pexels-photo-1484810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "courseList": [
           "Medicine",
           "Nursing",

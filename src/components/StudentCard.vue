@@ -5,6 +5,7 @@
     <div v-for="student in students" :key="student.studentId"
       class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10"
       @click="gotoStudent(Number(student.studentId))">
+      <img :src="student.profileImage" alt="Profile Image" class="w-32 h-50 object-cover absolute top-1/2 right-10 max-w-none -translate-y-1/2" />
       <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
         <li class="flex items-center">
           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
