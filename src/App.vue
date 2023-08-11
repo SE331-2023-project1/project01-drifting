@@ -11,8 +11,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <h1 class="text-4xl text-purple-500">Welcome to</h1>
 <h1 class="text-3xl">Student Information Management System</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink> 
-        <RouterLink to="/about">about</RouterLink>
+        <RouterLink to="/" class="text-purple-500">Home</RouterLink> 
+        <RouterLink to="/about" class="text-purple-500">about</RouterLink>
       </nav>
     
     </div>

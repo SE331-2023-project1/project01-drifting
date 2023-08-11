@@ -3,7 +3,7 @@
 <template>
   <div class="space-y-8 py-6">
     <div v-for="student in students" :key="student.studentId"
-      class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10"
+      class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 hover:bg-gray-200"
       @click="gotoStudent(Number(student.studentId))">
       <img :src="student.profileImage" alt="Profile Image" class="w-32 h-50 object-cover absolute top-1/2 right-10 max-w-none -translate-y-1/2" />
       <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
@@ -25,6 +25,7 @@
           </svg>
           <p class="ml-4">Student ID :{{ student.studentId }}</p>
         </li>
+    
       </div>
     </div>
     <div class="flex justify-between mt-4"> <!-- 使用flex和justify-between来分隔按钮 -->
