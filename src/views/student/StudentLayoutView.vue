@@ -54,7 +54,7 @@ StudentService.getStudentById(String(props.studentId))
 <template>
   <main class="container">
     <div v-if="student">
-      <div style="background-color: #fff9fd">
+      <div style="background-color: #d3f5fd">
         <div class="p-6 rounded-lg shadow-md space-y-4">
           <div class="-my-3 divide-y divide-gray-100 text-sm m-5 mt-2">
             <img
