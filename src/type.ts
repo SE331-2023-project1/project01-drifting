@@ -1,17 +1,16 @@
-export interface StudentItem {
+export interface Student {
   name: string;
   surname: string;
-  studentId: number;
+  studentId: string;
   profileImage: string;
   courseList: string[];
   teacherId: string;
-  comment: string;
-
+  comment: [];
 }
 
-export interface TeacherItem {
+export interface Teacher {
+  teacherId: string;
   name: string;
   surname: string;
   profileImage: string;
-  teacherId: string;
 }
