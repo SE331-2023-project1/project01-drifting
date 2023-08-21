@@ -4,7 +4,7 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Group Member :
 1. 622115513 Yanhang Yang
-2. 622115511 Xuanli Si
+2. 622115511 Sixuan Li
 3. 622115506 Hongjin Zhu
 
 ## Recommended IDE Setup
