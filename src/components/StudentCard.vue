@@ -18,12 +18,15 @@ const props = defineProps({
         params: { studentId: student?.studentId },
       }"
     >
-      <div class="card-wrapper">
-        <div class="card-body">
+ 
+    <div class="flex flex-wrap -m-4">
+    <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 hover:bg-gray-200">
+        <div class="mx-auto max-w-md">
           <img
-            class="pic w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+          class="w-32 h-50 object-cover absolute top-1/2 right-10 max-w-none -translate-y-1/2"
             :src="student?.profileImage"
           />
+          <div class="space-y-6 py-8 text-base leading-7 text-gray-600"></div>
           <h2>
             {{ student?.name }} {{ student?.surname }}
           </h2>
@@ -31,43 +34,12 @@ const props = defineProps({
           <p>Teacher ID: {{ student?.teacherId }}</p>
         </div>
       </div>
+   
+    </div>
+  
     </RouterLink>
   </article>
 </template>
 
 <style scoped>
-.card-wrapper {
-  padding: 20px;
-  width: 350px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  border-radius: 8px;
-  background-color: rgb(211, 251, 255);
-  margin: 1rem;
-}
-
-.student-link {
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-.card-body h2 {
-  margin: 0 0 12px 0;
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-.card-body h2 > span {
-  font-size: 16px;
-  color: #818181;
-}
-
-.card-body .card-email {
-  margin: 0 0 12px 0;
-  color: #818181;
-}
-
-.card-body p {
-  margin: 0 0 12px 0;
-}
 </style>

@@ -16,8 +16,8 @@ const props = defineProps({
     required: true,
   },
 });
-const pageSize = ref(6);
-StudentService.getStudents(6, props.page)
+const pageSize = ref(4);
+StudentService.getStudents(4, props.page)
   .then((response: AxiosResponse<Student[]>) => {
     students.value = response.data;
     totalStudent.value = response.headers["x-total-count"];
@@ -29,7 +29,7 @@ StudentService.getStudents(6, props.page)
 onBeforeRouteUpdate((to, from, next) => {
   const toPage = Number(to.query.page);
 
-  StudentService.getStudents(6, toPage)
+  StudentService.getStudents(4, toPage)
     .then((response: AxiosResponse<Student[]>) => {
       students.value = response.data;
       totalStudent.value = response.headers["x-total-count"];

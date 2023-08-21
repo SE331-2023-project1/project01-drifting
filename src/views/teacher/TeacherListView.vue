@@ -13,7 +13,7 @@ const props = defineProps({
     required: true,
   },
 });
-const pageSize = ref(6); //Defualt page size
+const pageSize = ref(4); //Defualt page size
 
 watchEffect(() => {
   TeacherService.getTeachers(pageSize.value, props.page).then(
