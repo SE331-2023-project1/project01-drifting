@@ -18,7 +18,7 @@ const props = defineProps({
         params: { studentId: student?.studentId },
       }"
     >
-    <div class="p-5 w-80 cursor-pointer  rounded-lg bg-gradient-to-b bg-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5 hover:bg-[rgb(202,202,202)] hover:ring-[rgb(212,212,212)] animate-fade" >
+    <div class="p-5 w-80 cursor-pointer  rounded-lg bg-gradient-to-b bg-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5 hover:bg-[rgb(202,202,202)] hover:ring-[rgb(212,212,212)] " >
         <div class="card-body">
           <img
             class="w-24 h-24 object-cover mb-4 rounded-md shadow-lg"
