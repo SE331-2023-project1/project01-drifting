@@ -3,13 +3,9 @@ import { ref, onMounted, computed } from "vue";
 import { Student } from "@/type";
 import StudentService from "@/services/StudentService";
 import { Teacher } from "@/type";
-import TeacherService from "@/services/TeacherService";
 import { useCommentsStore } from "@/stores/comment";
-import { onBeforeRouteLeave } from "vue-router";
 
 const commentsStore = useCommentsStore();
-
-const studentComments = ref<{ [studentId: string]: string[] }>({});
 
 const props = defineProps({
   studentId: String,

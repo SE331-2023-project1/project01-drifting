@@ -3,7 +3,7 @@ import StudentCard from "../../components/StudentCard.vue";
 import type { Student } from "@/type";
 import StudentService from "@/services/StudentService";
 import type { AxiosResponse } from "axios";
-import { ref, type Ref, watchEffect, computed } from "vue";
+import { ref, type Ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { onBeforeRouteUpdate } from "vue-router";
 
