@@ -5,10 +5,10 @@ import Sidebar from "@/components/Sidebar.vue";
 
 <template>
   <div class="app flex flex-col h-screen m-0 p-0">
-    <div class="upper-section m-0 p-0">
+    <div class="upper-section m-9 p-0">
       <Sidebar />
     </div>
-    <hr class="border-gray-400 w-full">
+    <hr class="border-gray-400 w-200">
     <div class="lower section flex-grow m-0 p-0 h-[500px] overflow-auto">
       <transition name="slide" mode="out-in">
       <RouterView />

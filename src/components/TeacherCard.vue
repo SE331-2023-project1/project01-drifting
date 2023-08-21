@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Teacher } from "@/type";
+import { type Teacher } from "@/type";
 import type { PropType } from "vue";
 
 const props = defineProps({
@@ -18,52 +18,20 @@ const props = defineProps({
         params: { teacherId: teacher?.teacherId },
       }"
     >
-      <div class="card-wrapper">
+    <div class="p-5 w-80 cursor-pointer  rounded-lg bg-gradient-to-b bg-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5 hover:bg-[rgb(202,202,202)] hover:ring-[rgb(212,212,212)] " >
         <div class="card-body">
           <img
-            class="pic w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+            class="w-24 h-24 object-cover mb-4 rounded-md shadow-lg"
             :src="teacher?.profileImage"
           />
-          <h2>
+          <h2 class="mb-3 text-xl font-bold text-gray-600">
             {{ teacher?.name }} {{ teacher?.surname }}
             <span>({{ teacher?.teacherId }})</span>
-          </h2>
-          <p>{{ teacher?.teacherId }}</p>
+          </h2 >
+          <p class="text-lg  text-gray-600">{{ teacher?.teacherId }}</p>
         </div>
       </div>
     </RouterLink>
   </article>
 </template>
 
-<style scoped>
-.card-wrapper {
-  padding: 20px;
-  width: 350px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  border-radius: 8px;
-  background-color: rgb(211, 251, 255);
-  margin: 1rem;
-}
-
-
-.card-body h2 {
-  margin: 0 0 12px 0;
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-.card-body h2 > span {
-  font-size: 16px;
-  color: #818181;
-}
-
-.card-body .card-email {
-  margin: 0 0 12px 0;
-  color: #818181;
-}
-
-.card-body p {
-  margin: 0 0 12px 0;
-}
-</style>
