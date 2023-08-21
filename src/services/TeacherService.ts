@@ -3,7 +3,7 @@ import type { AxiosInstance, AxiosResponse } from "axios";
 import type { Teacher } from "@/type";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "https://my-json-server.typicode.com/Cosmos-52/331-project1-RESTapi",
+  baseURL: import.meta.env.VITE_BASE_URL,
   withCredentials: false,
   headers: {
     Accept: "application/json",
