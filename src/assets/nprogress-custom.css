@@ -1,0 +1,9 @@
+#nprogress .bar {
+    height: 6px; /* Change the height to make it thicker */
+    background:rgb(29, 161, 242); /* Change the color to red */
+  }
+  
+  #nprogress .peg {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1);
+  }
+  

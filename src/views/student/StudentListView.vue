@@ -16,8 +16,8 @@ const props = defineProps({
     required: true,
   },
 });
-const pageSize = ref(6);
-StudentService.getStudents(6, props.page)
+const pageSize = ref(3);
+StudentService.getStudents(3, props.page)
   .then((response: AxiosResponse<Student[]>) => {
     students.value = response.data;
     totalStudent.value = response.headers["x-total-count"];
@@ -29,7 +29,7 @@ StudentService.getStudents(6, props.page)
 onBeforeRouteUpdate((to, from, next) => {
   const toPage = Number(to.query.page);
 
-  StudentService.getStudents(4, toPage)
+  StudentService.getStudents(3, toPage)
     .then((response: AxiosResponse<Student[]>) => {
       students.value = response.data;
       totalStudent.value = response.headers["x-total-count"];
@@ -47,39 +47,64 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <main class="events">
-    <div class="container">
+  <main class="flex flex-col items-center">
+    <div class="container mt-12 grid grid-cols-3 place-items-center gap-12">
       <StudentCard
         v-for="student in students"
         :key="student.studentId"
         :student="student"
       ></StudentCard>
     </div>
-    <div class="flex"></div>
-    <div class="pagination flex justify-between items-center mt-8">
+    <div class="flex flex-1"></div>
+    <div class="pagination flex justify-between items-center mt-8 w-80">
       <div>
         <RouterLink
           :to="{ name: 'students', query: { page: page - 1 } }"
           rel="prev"
           v-if="page != 1"
-          class="btn btn-blue"
+          class="px-4 py-2 bg-[rgb(29,161,242)] hover:bg-[rgb(29,161,242)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
         >
-          <span class="text-sm font-bold">
-            Prev Page
-          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+            />
+          </svg>
+
+          <span>Prev Page</span>
         </RouterLink>
       </div>
-
       <div>
         <RouterLink
           :to="{ name: 'students', query: { page: page + 1 } }"
           rel="next"
           v-if="hasNextPage"
-          class="btn btn-blue "
+          class="px-4 py-2 bg-[rgb(29,161,242)] hover:bg-[rgb(29,161,242)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
         >
-          <span class="text-sm font-bold ">
-            Next Page
-          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+            />
+          </svg>
+
+          <span>Next Page</span>
         </RouterLink>
       </div>
     </div>
@@ -87,69 +112,12 @@ const hasNextPage = computed(() => {
 </template>
 
 <style scoped>
-.flex {
-  @apply flex-1;
-}
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.pagination {
-  display: flex;
-  width: 340px;
-  align-items: baseline;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-.pageSize {
-  padding: 0 0 20px 0;
-}
-#page-prev {
-  text-align: left;
-}
-#page-next {
-  text-align: right;
-}
-.container {
 
-  margin-top: 3rem;
+.container {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Change from 3 to 2 */
   place-items: center;
-  row-gap: 3rem;
-}
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 1rem;
-  text-align: center;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-}
-
-.btn-blue {
-  background-color: rgb(176, 186, 245);
-  color: white;
-}
-
-
-@media (max-width: 1149px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 859px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
+  row-gap: 2rem;
 }
 </style>
