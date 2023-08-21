@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 import Sidebar from "@/components/Sidebar.vue";
+import { computed } from "vue";
+
+const route = useRoute();
+const showSidebar = computed(() => {
+  // Add conditions based on the route names where you want to hide the sidebar
+  return route.name !== 'student-detail' && route.name !== 'teacher-detail';
+});
+
 </script>
 
 <template>
   <div class="app flex flex-col h-screen m-0 p-0">
-    <div class="upper-section m-9 p-0">
+    <div class="upper-section m-9 p-0 " v-if="showSidebar">
       <Sidebar />
     </div>
     <hr class="border-gray-400 w-200">

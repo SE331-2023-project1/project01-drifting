@@ -53,10 +53,11 @@ StudentService.getStudentById(String(props.studentId))
     <div v-if="student" class="space-y-4">
       <h1 class="text-2xl font-bold">Student Information:</h1>
       <div
-        class="p-5 w-auto h-auto rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
+        class="p-5 w-96 h-auto rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
         <!-- Student Details -->
+        <img class="w-full h-56 object-cover" :src="student.profileImage" />
         <div class="flex items-center space-x-4 mb-4">
-          <img class="w-28 h-27 object-cover rounded-md shadow-lg" :src="student.profileImage" />
+
           <div>
             <h2 class="text-2xl font-bold mb-2">Name:</h2>
             <h2 class="text-2xl mb-2">
@@ -66,7 +67,7 @@ StudentService.getStudentById(String(props.studentId))
             <h2 class="text-2xl mb-2">{{ student.studentId }}</h2>
             <h2 class="text-2xl font-bold mb-2">enrolled courses:</h2>
             <h1 class="text-2xl mb-2 text-green-500">
-              {{ student.courseList }}
+              {{ student.courseList.join(', ') }}
             </h1>
             <h2 class="text-2xl font-bold mb-2">profile image link:</h2>
             <a :href="student.profileImage" class="text-2xl text-sky-500 hover:text-sky-600">Check iamge &rarr;</a>
@@ -125,14 +126,32 @@ StudentService.getStudentById(String(props.studentId))
               </button>
             </RouterLink>
           </div>
+
         </div>
       </div>
+
     </div>
 
+    <a href="/"
+      class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(29,161,242)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+      <span
+        class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[rgb(29,161,242)] group-hover:h-full"></span>
+      <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </span>
+      <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </span>
+      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to mainpage</span>
+    </a>
 
-
-  </main>
-</template>
+</main></template>
 
 
 
