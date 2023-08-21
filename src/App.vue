@@ -8,7 +8,7 @@ import Sidebar from "@/components/Sidebar.vue";
     <div class="upper-section m-0 p-0">
       <Sidebar/>
     </div>
-    <hr class="border-gray-400 w-screen" >
+    <hr class="border-gray-400 w-full" >
     <div class="lower-section flex-grow m-0 p-0">
       <router-view/>
     </div>

@@ -18,28 +18,23 @@ const props = defineProps({
         params: { studentId: student?.studentId },
       }"
     >
- 
-    <div class="flex flex-wrap -m-4">
-    <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 hover:bg-gray-200">
-        <div class="mx-auto max-w-md">
+    <div class="p-5 w-80 cursor-pointer  rounded-lg bg-gradient-to-b bg-[rgb(247,72,67)] m-4 shadow-xl ring-1 ring-gray-900/5">
+        <div class="card-body">
           <img
-          class="w-32 h-50 object-cover absolute top-1/2 right-10 max-w-none -translate-y-1/2"
+            class="w-24 h-24 object-cover mb-4 rounded-md shadow-lg"
             :src="student?.profileImage"
           />
-          <div class="space-y-6 py-8 text-base leading-7 text-gray-600"></div>
-          <h2>
-            {{ student?.name }} {{ student?.surname }}
+          <h2 class="mb-3 text-xl font-bold text-white">
+            {{student?.name}} {{student?.surname}}
           </h2>
-          <h3>Student ID: {{ student?.studentId }}</h3>
-          <p>Teacher ID: {{ student?.teacherId }}</p>
+          <h3 class="text-lg  text-white">Student ID: {{student?.studentId}}</h3>
+          <p class="mb-3  text-white">Teacher ID: {{student?.teacherId}}</p>
         </div>
       </div>
-   
-    </div>
-  
     </RouterLink>
   </article>
 </template>
 
 <style scoped>
+
 </style>

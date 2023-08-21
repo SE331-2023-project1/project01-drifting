@@ -16,8 +16,8 @@ const props = defineProps({
     required: true,
   },
 });
-const pageSize = ref(4);
-StudentService.getStudents(4, props.page)
+const pageSize = ref(6);
+StudentService.getStudents(6, props.page)
   .then((response: AxiosResponse<Student[]>) => {
     students.value = response.data;
     totalStudent.value = response.headers["x-total-count"];
@@ -115,9 +115,10 @@ const hasNextPage = computed(() => {
   text-align: right;
 }
 .container {
+
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Change from 3 to 2 */
   place-items: center;
   row-gap: 3rem;
 }
