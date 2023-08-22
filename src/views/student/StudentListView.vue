@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-if="loading" class="text-center py-4 lg:px-4">
+  <div v-if="loading" class="text-center py-4 lg:px-4 transition ease-out duration-300">
     <div class="p-2 bg-[rgb(29,161,242)] items-center text-indigo-100 leading-none lg:rounded-md flex lg:inline-flex"
       role="alert">
       <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-500"
@@ -102,13 +102,13 @@ onBeforeUnmount(() => {
       <span class="font-semibold mr-2 text-left flex-auto">Please wait for get data........</span>
     </div>
   </div>
-  <div v-if="noMorePagesMessageVisible" class="text-center py-4 lg:px-4">
-    
-    <div 
-      class="text-center py-3 lg:px-3 bg-red-100 border border-red-400 text-red-700 px-4 rounded-md relative"
+  <div v-if="noMorePagesMessageVisible" class="text-center py-4 lg:px-4 transition-all ease-out duration-300"
+    :class="{ 'opacity-0': !noMorePagesMessageVisible }">
+
+    <div class="text-center py-3 lg:px-3 bg-red-100 border border-red-400 text-red-700 px-4 rounded-md relative"
       role="alert">
-      
-      <strong class="font-bold">oh,oho   </strong>
+
+      <strong class="font-bold">oh,oho </strong>
       <span class="block sm:inline">There are no more pages left</span>
       <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
       </span>
