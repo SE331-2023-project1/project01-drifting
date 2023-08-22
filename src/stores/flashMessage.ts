@@ -12,4 +12,10 @@ export const useFlashMessageStore = defineStore("flashMessage", {
       this.message = "";
     },
   },
+  getters: {
+    hasMessage: (state) => {
+      return state.message.length > 0;
+    }
+  },
+  
 });

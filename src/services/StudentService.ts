@@ -2,6 +2,7 @@ import axios from "axios";
 import type { AxiosInstance, AxiosResponse } from "axios";
 import type { Student } from "@/type";
 import type { Teacher } from "@/type";
+import { inject, provide } from "vue";
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -23,9 +24,7 @@ export default {
     );
   },
   getStudentById(studentId: string): Promise<AxiosResponse<Student>> {
-    return apiClient.get<Student>(
-      "students/" + "?studentId=" + studentId.toString(),
-    );
+    return apiClient.get<Student>("students?studentId=" + studentId.toString());
   },
 
   getTeacherByTeacherID(teacherId: string): Promise<AxiosResponse<Teacher>> {
@@ -36,10 +35,4 @@ export default {
   },
 };
 
-export function provideStudentService() {
-  provide(studentServiceSymbol, useStudentService());
-}
 
-export function injectStudentService() {
-  return inject(studentServiceSymbol) as ReturnType<typeof useStudentService>;
-}

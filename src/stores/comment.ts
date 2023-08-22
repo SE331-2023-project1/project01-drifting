@@ -18,4 +18,9 @@ export const useCommentsStore = defineStore("comments", {
       return this.comments;
     },
   },
+  getters: {
+    getCommentsCount: (state) => (key: string) => {
+      return state.comments[key]?.length || 0;
+    }
+  },
 });
