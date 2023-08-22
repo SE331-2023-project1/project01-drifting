@@ -1,4 +1,5 @@
 # If you want to view the files related to firebase, please move to branch firebase
+## Main branch is older vision if you want check code pls go check branch firebase
 https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 -
 # se331-project-1
