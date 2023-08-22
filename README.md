@@ -1,8 +1,11 @@
 # If you want to view the files related to firebase, please move to branch firebase
-## Main branch is older vision if you want check code pls go check branch firebase
 https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 -
-# se331-project-1
+
+# URL of the deployed website：
+
+🔥🔥 https://se331-porject1.firebaseapp.com/
+-
 
 <h2>🌟Team name: drifting🌟</h2>
 
@@ -11,10 +14,7 @@ https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 2. 622115511 Sixuan Li
 3. 622115506 Hongjin Zhu
 
-# URL of the deployed website：
 
-🔥🔥 https://se331-porject1.firebaseapp.com/
--
 # ✅ Action in firebase branch ：
 <img src="https://github.com/YanhangYANG/lab3/blob/main/1.png" alt="Alt text" title="Optional title">
 
