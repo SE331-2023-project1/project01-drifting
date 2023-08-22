@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
-import { Student } from "@/type";
+import { type Student } from "@/type";
 import StudentService from "@/services/StudentService";
-import { Teacher } from "@/type";
+import { type Teacher } from "@/type";
 import { useCommentsStore } from "@/stores/comment";
 
 const commentsStore = useCommentsStore();
@@ -24,28 +24,29 @@ const newComment = ref("");
 const flashMessage = ref(false); // Controls the visibility of the flash message
 
 onMounted(async () => {
+  if (props.studentId) {
   const studentResponse = await StudentService.getStudentById(props.studentId);
-  student.value = studentResponse.data[0];
+  student.value = (studentResponse.data as unknown as Student[])[0];
+}
 });
 
 function submitComment() {
-  if (newComment.value.trim() !== "") {
+  if (newComment.value.trim() !== "" && student.value) { // 检查 student.value 是否存在
     commentsStore.addComment(student.value.studentId, newComment.value);
     newComment.value = "";
     flashMessage.value = true; // Show flash message
-    setTimeout(() => (flashMessage.value = false), 3000); // Hide flash message after 3 seconds
+    setTimeout(() => (flashMessage.value = false), 1000); // Hide flash message after 3 seconds
   }
 }
 
 StudentService.getStudentById(String(props.studentId))
   .then((studentResponse) => {
-    student.value = studentResponse.data[0];
+    student.value = (studentResponse.data as unknown as Student[])[0];
 
-    StudentService.getTeacherByStudent(student.value)
-      .then((teacherResponse) => {
-        teacher.value = teacherResponse.data[0];
-      })
-      .catch((error) => { });
+    return StudentService.getTeacherByStudent(student.value);
+  })
+  .then((teacherResponse) => {
+    teacher.value = (teacherResponse.data as unknown as Teacher[])[0];
   })
   .catch((error) => { });
 </script>

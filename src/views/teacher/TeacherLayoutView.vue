@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Teacher } from "@/type";
+import { type Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
 
 const props = defineProps({
@@ -11,7 +11,7 @@ const teacher = ref<Teacher | null>(null);
 
 TeacherService.getTeacherById(String(props.teacherId))
   .then((teacherResponse) => {
-    teacher.value = teacherResponse.data[0];
+    teacher.value = (teacherResponse.data as unknown as Teacher[])[0];
     console.log(teacher.value);
   })
   .catch((error) => {
