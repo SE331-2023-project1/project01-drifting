@@ -20,6 +20,12 @@ const comments = computed(() => {
   }
   return [];
 });
+const commentsCount = computed(() => {
+  if (student.value) {
+    return commentsStore.getCommentsCount(student.value.studentId);
+  }
+  return 0;
+});
 const newComment = ref("");
 const flashMessage = ref(false); // Controls the visibility of the flash message
 
@@ -72,9 +78,58 @@ StudentService.getStudentById(String(props.studentId))
             <h2 class="text-2xl font-bold mb-2">StudentId:</h2>
             <h2 class="text-2xl mb-2">{{ student.studentId }}</h2>
             <h2 class="text-2xl font-bold mb-2">enrolled courses:</h2>
-            <h1 class="text-2xl mb-2 text-green-500">
-              {{ student.courseList.join(', ') }}
-            </h1>
+            <div class="relative overflow-x-auto rounded-md">
+              <table class="w-full text-sm text-left text-gray-700 dark:text-gray-500 mb-2 drop-shadow-md shadow-md relative justify-center overflow-hidden absolute inset-0">
+                <thead class=" rounded-md text-xs text-gray-800   uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-1 py-3 bg-gray-200">
+                      Number
+                    </th>
+                    <th scope="col" class="px-6 py-3 bg-gray-200">
+                      Course Name
+                    </th>
+                    <th scope="col" class="px-1 py-3 bg-gray-200">
+                      Credit
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      1
+                    </th>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      {{ student.courseList[0] }}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      3.0
+                    </td>
+                  </tr>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      2
+                    </th>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      {{ student.courseList[1] }}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      3.0
+                    </td>
+                  </tr>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      3
+                    </th>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      {{ student.courseList[2] }}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      3.0
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <h2 class="text-2xl font-bold mb-2">profile image link:</h2>
             <a :href="student.profileImage" class="text-2xl text-sky-500 hover:text-sky-600">Check iamge &rarr;</a>
           </div>
@@ -85,9 +140,9 @@ StudentService.getStudentById(String(props.studentId))
 
     <div class="w-1/2 p-4 mt-3">
       <!-- Comments Section -->
-      <h1 class="text-2xl font-bold">Given comment:</h1>
+      <h1 class="text-2xl font-bold">Advisor Given comment:</h1>
       <div class="border-t border-gray-300 p-4 space-y-4 h-auto overflow-y-auto w-auto">
-        <h2>All Comments</h2>
+        <h2>All Comments   [total:  {{ commentsCount }} comment now]</h2>
         <div v-for="(comment, index) in comments" :key="index">
           <p>{{ comment }}</p>
         </div>
@@ -98,7 +153,7 @@ StudentService.getStudentById(String(props.studentId))
             <textarea v-model="newComment" placeholder="Write a comment"
               class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"></textarea>
             <button @click="submitComment"
-              class="bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
+              class="mb-3 bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
               <span class="mr-2">Submit</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
@@ -123,13 +178,13 @@ StudentService.getStudentById(String(props.studentId))
         </div>
       </div>
       <div class="space-y-4">
-        <h1 class="text-2xl font-bold mb-1">Teacher:</h1>
+        <h1 class="text-2xl font-bold mb-1">Advisor:</h1>
         <div
           class="p-5 w-100 h-40 flex items-center rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
           <img class="w-24 h-24 object-cover rounded-md shadow-lg " :src="teacher?.profileImage" />
           <div class="ml-4">
-            <h1 class="text-2xl font-bold">Name: {{ teacher?.name }} {{ teacher?.surname }}</h1>
-            <h1 class="text-lg">Teacher ID:{{ teacher?.teacherId }}</h1>
+            <h1 class="mb-2 text-2xl font-bold">Name: {{ teacher?.name }} {{ teacher?.surname }}</h1>
+            <h1 class="mb-3 text-lg">Advisor ID:   <span class=" mb-3 rounded-lg italic font-bold bg-[rgb(158,118,180)] py-1 px-2 text-xl text-white">{{ teacher?.teacherId }}</span></h1>
             <RouterLink :to="{
               name: 'teacher-detail',
               params: { teacherId: teacher?.teacherId },
@@ -155,7 +210,7 @@ StudentService.getStudentById(String(props.studentId))
 
 
     <a href="/"
-      class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(29,161,242)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+      class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(29,161,242)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-100 group shadow-xl">
       <span
         class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[rgb(29,161,242)] group-hover:h-full"></span>
       <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -170,8 +225,10 @@ StudentService.getStudentById(String(props.studentId))
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </span>
-      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to
-        mainpage</span>
+      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white font-bold text-2xl">Back to     
+        
+        
+        Mainpage</span>
     </a>
 
 

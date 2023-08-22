@@ -37,7 +37,7 @@ TeacherService.getTeacherById(String(props.teacherId))
           <p class="text-gray-600 mt-2">Join Date:               {{ teacher?.JoinedDate }}</p>
           <hr class="border-gray-400 w-auto">
           
-          <a href="/"
+          <a href="/teacher"
       class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(158,118,180)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
       <span
         class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[rgb(158,118,180)] group-hover:h-full"></span>
@@ -53,7 +53,7 @@ TeacherService.getTeacherById(String(props.teacherId))
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </span>
-      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to mainpage</span>
+      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">Back to TeacherPage</span>
     </a>
         </div>
       </div>
