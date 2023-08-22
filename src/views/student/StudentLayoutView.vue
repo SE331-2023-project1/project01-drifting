@@ -106,7 +106,7 @@ StudentService.getStudentById(String(props.studentId))
         <h1 class="text-2xl font-bold mb-1">Teacher:</h1>
         <div
           class="p-5 w-100 h-40 flex items-center rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
-          <img class="w-24 h-24 object-cover rounded-md shadow-lg" :src="teacher?.profileImage" />
+          <img class="w-24 h-24 object-cover rounded-md shadow-lg "  :src="teacher?.profileImage" />
           <div class="ml-4">
             <h1 class="text-2xl font-bold">Name: {{ teacher?.name }} {{ teacher?.surname }}</h1>
             <h1 class="text-lg">Teacher ID:{{ teacher?.teacherId }}</h1>
@@ -132,6 +132,8 @@ StudentService.getStudentById(String(props.studentId))
 
     </div>
 
+    
+
     <a href="/"
       class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(29,161,242)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
       <span
@@ -150,6 +152,7 @@ StudentService.getStudentById(String(props.studentId))
       </span>
       <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to mainpage</span>
     </a>
+  
 
 </main></template>
 

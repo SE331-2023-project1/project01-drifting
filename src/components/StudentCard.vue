@@ -28,7 +28,7 @@ const props = defineProps({
         <div class="px-6 py-4">
           <div class="mb-2">
             <h2 class="text-xl font-bold text-gray-900">{{ student?.name }} {{ student?.surname }}</h2>
-            <div class="rounded-lg bg-[rgb(29,161,242)] py-1 px-2 text-xl font-medium text-white">{{ student?.studentId }}</div>
+            <div class="rounded-lg bg-[rgb(29,161,242)] py-1 px-2 text-xl text-white italic font-bold">{{ student?.studentId }}</div>
             <h2 class="text-xl font-bold text-gray-900 ">Belong to teacherID: {{ student?.teacherId }}</h2>
           </div>
         </div>

@@ -14,7 +14,7 @@
   </RouterLink>
 <h1>|</h1>
   <RouterLink :to="{name:'teachers'}" custom v-slot="{ navigate, isActive }">
-    <a @click="navigate" :class="isActive ? 'border-b-4 border-[rgb(29,161,242)] pb-3 cursor-pointer' : 'hover:border-b-4 hover:border-[rgb(29,161,242)] pb-1 cursor-pointer'">Teacher</a>
+    <a @click="navigate" :class="isActive ? 'border-b-4 border-[rgb(158,118,180)] pb-3 cursor-pointer' : 'hover:border-b-4 hover:border-[rgb(158,118,180)] pb-1 cursor-pointer'">Teacher</a>
   </RouterLink>
   
 </nav>

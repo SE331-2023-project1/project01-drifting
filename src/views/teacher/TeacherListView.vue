@@ -46,7 +46,7 @@ const hasNextPage = computed(() => {
           :to="{ name: 'teachers', query: { page: page - 1 } }"
           rel="prev"
           v-if="page != 1"
-          class="px-4 py-2 bg-[rgb(29,161,242)] hover:bg-[rgb(29,161,242)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
+          class="px-4 py-2 bg-[rgb(158,118,180)] hover:bg-[rgb(158,118,180)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const hasNextPage = computed(() => {
           :to="{ name: 'teachers', query: { page: page + 1 } }"
           rel="next"
           v-if="hasNextPage"
-          class="px-4 py-2 bg-[rgb(29,161,242)] hover:bg-[rgb(29,161,242)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
+          class="px-4 py-2 bg-[rgb(158,118,180)] hover:bg-[rgb(158,118,180)] rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-50 flex"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

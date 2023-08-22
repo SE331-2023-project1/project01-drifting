@@ -12,5 +12,9 @@ export interface Teacher {
   teacherId: string;
   name: string;
   surname: string;
+  Teachingsubjects: string;
+  department: string;
+  phonenumber: string;
+  JoinedDate: string;
   profileImage: string;
 }
