@@ -1,14 +1,14 @@
 import { defineStore } from "pinia";
 
-export const useMessageStore = defineStore("message", {
+export const useFlashMessageStore = defineStore("flashMessage", {
   state: () => ({
     message: "" as string,
   }),
   actions: {
-    updateMessage(message: string) {
+    showMessage(message: string) {
       this.message = message;
     },
-    resetMessage() {
+    clearMessage() {
       this.message = "";
     },
   },
