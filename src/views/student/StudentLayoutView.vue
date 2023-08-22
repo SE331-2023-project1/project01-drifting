@@ -50,7 +50,7 @@ StudentService.getStudentById(String(props.studentId))
 <template>
   <main class="container mx-auto w-screen flex">
     <!-- Student&Teacher Info -->
-    <div v-if="student" class="space-y-4">
+    <div v-if="student" class="space-y-4 mt-3">
       <h1 class="text-2xl font-bold">Student Information:</h1>
       <div
         class="p-5 w-96 h-auto rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
@@ -77,7 +77,7 @@ StudentService.getStudentById(String(props.studentId))
       <!-- Teacher Details -->
     </div>
 
-    <div class="w-1/2 p-4">
+    <div class="w-1/2 p-4 mt-3">
       <!-- Comments Section -->
       <h1 class="text-2xl font-bold">Given comment:</h1>
       <div class="border-t border-gray-300 p-4 space-y-4 h-auto overflow-y-auto w-auto">
