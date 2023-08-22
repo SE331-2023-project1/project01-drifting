@@ -42,10 +42,10 @@ const router = createRouter({
         const eventStore = useEventStore();
         return StudentService.getStudentById(studentId)
           .then((response) => {
-            if (response.data.length === 0) {
+            if ((response.data as any).length === 0) {
               return { name: '404-resource', params: { resource: 'student' } };
             } else {
-              eventStore.setEvent(response.data[0]);
+              eventStore.setEvent(response.data as any);
             }
           })
           .catch((error) => {
@@ -56,6 +56,8 @@ const router = createRouter({
             }
           });
       },
+      
+      
       children: [
         {
           path: "",
@@ -75,10 +77,10 @@ const router = createRouter({
         const TeachereventStore = useTeacherStore();
         return TeacherService.getTeacherById(teacherId)
           .then((response) => {
-            if (response.data.length === 0) {
+            if ((response.data as any).length === 0) {
               return { name: '404-resource', params: { resource: 'teacher' } };
             }else {
-              TeachereventStore.setEvent(response.data[0]);
+              TeachereventStore.setEvent(response.data as any);
             }
           })
           .catch((error) => {

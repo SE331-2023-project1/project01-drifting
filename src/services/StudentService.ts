@@ -24,9 +24,7 @@ export default {
     );
   },
   getStudentById(studentId: string): Promise<AxiosResponse<Student>> {
-    return apiClient.get<Student>(
-      "students/" + "?studentId=" + studentId.toString(),
-    );
+    return apiClient.get<Student>("students?studentId=" + studentId.toString());
   },
 
   getTeacherByTeacherID(teacherId: string): Promise<AxiosResponse<Teacher>> {
