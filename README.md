@@ -1,4 +1,5 @@
-# If you want to view the files related to firebase, please move to branch firebase
+# The Main branch is mainly responsible for code display. 
+If you need to view firebase related functions, please go to the firebase branch
 https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 -
 
