@@ -21,6 +21,7 @@ const comments = computed(() => {
   return [];
 });
 const newComment = ref("");
+const flashMessage = ref(false); // Controls the visibility of the flash message
 
 onMounted(async () => {
   const studentResponse = await StudentService.getStudentById(props.studentId);
@@ -31,6 +32,8 @@ function submitComment() {
   if (newComment.value.trim() !== "") {
     commentsStore.addComment(student.value.studentId, newComment.value);
     newComment.value = "";
+    flashMessage.value = true; // Show flash message
+    setTimeout(() => (flashMessage.value = false), 3000); // Hide flash message after 3 seconds
   }
 }
 
@@ -49,7 +52,9 @@ StudentService.getStudentById(String(props.studentId))
 
 <template>
   <main class="container mx-auto w-screen flex">
+
     <!-- Student&Teacher Info -->
+
     <div v-if="student" class="space-y-4 mt-3">
       <h1 class="text-2xl font-bold">Student Information:</h1>
       <div
@@ -99,6 +104,20 @@ StudentService.getStudentById(String(props.studentId))
               </svg>
             </button>
 
+            <div v-if="flashMessage"
+              class="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+              role="alert">
+              <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span class="sr-only">Info</span>
+              <div>
+                <span class="font-medium">Success!   </span> You successfully uploaded a comment.
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -106,7 +125,7 @@ StudentService.getStudentById(String(props.studentId))
         <h1 class="text-2xl font-bold mb-1">Teacher:</h1>
         <div
           class="p-5 w-100 h-40 flex items-center rounded-lg bg-gradient-to-b from-[rgb(242,243,244)] m-4 shadow-xl ring-1 ring-gray-900/5">
-          <img class="w-24 h-24 object-cover rounded-md shadow-lg "  :src="teacher?.profileImage" />
+          <img class="w-24 h-24 object-cover rounded-md shadow-lg " :src="teacher?.profileImage" />
           <div class="ml-4">
             <h1 class="text-2xl font-bold">Name: {{ teacher?.name }} {{ teacher?.surname }}</h1>
             <h1 class="text-lg">Teacher ID:{{ teacher?.teacherId }}</h1>
@@ -132,7 +151,7 @@ StudentService.getStudentById(String(props.studentId))
 
     </div>
 
-    
+
 
     <a href="/"
       class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[rgb(29,161,242)] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
@@ -150,11 +169,13 @@ StudentService.getStudentById(String(props.studentId))
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </span>
-      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to mainpage</span>
+      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">back to
+        mainpage</span>
     </a>
-  
 
-</main></template>
+
+  </main>
+</template>
 
 
 

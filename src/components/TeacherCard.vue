@@ -18,7 +18,7 @@ const props = defineProps({
         params: { teacherId: teacher?.teacherId },
       }"
     >
-    <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl w-80 hover:bg-gray-200">
+    <div class="max-w-sm rounded overflow-hidden bg-[rgb(245,244,245)] shadow-lg hover:shadow-xl w-80 hover:bg-[rgb(210,209,211)]">
       <img class="w-full h-56 object-cover" :src="teacher?.profileImage" />
       <div class="px-6 py-4">
         <div class="mb-2">
