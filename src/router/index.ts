@@ -6,10 +6,13 @@ import Teacher from "../views/teacher/TeacherListView.vue";
 import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
+import AddStudentAdvisor from "@/views/student/AddStudentAdvisor.vue";
 import NProgress from "nprogress";
 import { useEventStore, useTeacherStore } from "../stores/event";
 import StudentService from "../services/StudentService";
 import TeacherService from "../services/TeacherService";
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +25,11 @@ const router = createRouter({
         page: parseInt((route.query?.page as string) || "1"),
         pageSize: parseInt((route.query?.page as string) || "2"),
       }),
+    },
+    {
+      path: '/add-student-advisor',
+      name: 'AddStudentAdvisor',
+      component: AddStudentAdvisor
     },
     {
       path: "/teacher",
