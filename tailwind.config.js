@@ -3,6 +3,9 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+    "./src/**/*.{js,jsx,ts,tsx}",
+"./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
     extend: {},
@@ -29,7 +32,8 @@ module.exports = {
       }
   }
   },
-  plugins: [require('tailwindcss-bg-patterns'),],
+  plugins: [require('tailwindcss-bg-patterns'),
+  require('flowbite/plugin')],
 }
 
 
