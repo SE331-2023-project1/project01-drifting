@@ -5,7 +5,7 @@ https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 
 # URL of the deployed website：
 
-🔥🔥 https://se331-porject1.firebaseapp.com/
+🔥🔥 https://se331-porject1.firebaseapp.com/ 🔥🔥
 -
 
 <h2>🌟Team name: drifting🌟</h2>
@@ -15,6 +15,9 @@ https://github.com/SE331-2023-project1/project01-drifting/tree/firebase
 2. 622115511 Sixuan Li
 3. 622115506 Hongjin Zhu
 
+# ✅ 404page when id not found
+
+<img src="https://github.com/YanhangYANG/lab3/blob/main/2.png" alt="Alt text" title="Optional title">
 
 # ✅ Action in firebase branch ：
 <img src="https://github.com/YanhangYANG/lab3/blob/main/1.png" alt="Alt text" title="Optional title">
